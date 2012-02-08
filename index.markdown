@@ -14,7 +14,7 @@ title: Welcome
               {{ post.date | date: "%B %d, %Y" }}
             </time>
           </span>
-        {{ post.content }}
+          <p class="content">{{ post.content }}</p>
       </article>
     </li>
   {% endfor %}
