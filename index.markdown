@@ -12,6 +12,9 @@ title: Welcome
       		{{ post.date | date: "%B %d, %Y" }}
       	</time>
       </span>
+      <article>
+        {{ post.content }}
+      </article>
     </li>
   {% endfor %}
 </ul>
