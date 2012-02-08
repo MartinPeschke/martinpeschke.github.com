@@ -1,7 +1,8 @@
 @body-color:#333;
 @link-color: #666;
 
-body {font-family: sans-serif;color:@body-color;}
+body {font-family: sans-serif;color:@body-color;border-top: 6px #8CC84B solid;}
+
 a {
   text-decoration:none;
   color:@link-color;
@@ -20,26 +21,21 @@ header {
   @gradient-foreground: #ccc;
   @gradient-background: #fff;
   padding:  .5em 0;
-  background: @gradient-background; /* fallback for non-supporting browsers */  
-  background-image: -webkit-gradient(radial, top left, 0, bottom right, 100%, from(@gradient-foreground), to(@gradient-background), color-stop(90%, @gradient-background)); /* old WebKit Syntax */  
-  background-image: -webkit-radial-gradient(top left, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* New WebKit syntax */  
-  background-image: -moz-radial-gradient(top left, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%);  
-  background-image: -ms-radial-gradient(top left, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* IE10+ */  
-  background-image: -o-radial-gradient(top left, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* Opera (13?) */  
-  background-image: radial-gradient(top left, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* standard syntax */  
+  background: black;
   border-bottom: 1px solid #CCC;
   -webkit-box-shadow: 0 1px 7px rgba(0,0,0,.4);
   -moz-box-shadow: 0 1px 7px rgba(0,0,0,.4);
   box-shadow: 0 1px 7px rgba(0,0,0,.4);
+  a {color:white;
+    &:active,&:hover {color:darken(white, 20%);
+    }
 }
 
 .body-wrapper {margin-top: 50px;}
 
 .aboutme {
-  -webkit-box-shadow: 0 0 15px rgba(0,0,0,.4) inset;
-  -moz-box-shadow: 0 0 15px rgba(0,0,0,.4) inset;
-  box-shadow: 0 0 15px rgba(0,0,0,.4) inset;
-  border-radius:5px;
+  font-family:"Courier New", monospace;
+  background:black;
   padding: 15px 0;
   h1{padding: 0 25px 15px;}
   p {padding: 5px 25px;}
