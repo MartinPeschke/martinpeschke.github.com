@@ -1,17 +1,12 @@
 ---
-layout: index
+layout: default
 title: Welcome
 ---
 
 <html>
 <body>
-welcoem home
-
----
-{% for item in posts %}
-  {{ post.title }}
+{% for post in site.posts %}
+  {{ post.title | xml_escape }} {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}
-
-
 </body>
 </html>
