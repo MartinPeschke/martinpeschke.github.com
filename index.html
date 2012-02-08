@@ -3,10 +3,6 @@ layout: default
 title: Welcome
 ---
 
-<html>
-<body>
 {% for post in site.posts %}
-  {{ post.title | xml_escape }} {{ post.date | date: "%B %d, %Y" }}
+{{ post.title | xml_escape }} {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}
-</body>
-</html>
