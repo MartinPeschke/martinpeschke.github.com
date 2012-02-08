@@ -1,5 +1,6 @@
 @body-color:#333;
 @link-color: #666;
+@standard-color: #8CC84B
 
 body {font-family: sans-serif;color:@body-color;border-top: 6px #8CC84B solid;}
 
@@ -40,4 +41,5 @@ header {
   h3, p {padding: 5px 25px;}
 }
 
-article.content {margin-top: 15px;}
+.content {margin-top: 15px;margin-bottom: 25px;}
+article {border-bottom: 2px solid darken(@standard-color, 20%);}
