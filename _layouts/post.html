@@ -3,11 +3,9 @@ layout: default
 article-class: post
 ---
 
-<date datetime="{{ page.date | date: "%Y-%m-%d" }}" pubdate>
-  <span class="month">{{ page.date | date: "%b" }}</span>
-  <span class="day">{{ page.date | date: "%d" }}</span>
-  <span class="year">{{ page.date | date: "%Y" }}</span>
-</date>
+<time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+  {{ post.date | date: "%B %d, %Y" }}
+</time>
 
 <h1>{{ page.title }}</h1>
 
