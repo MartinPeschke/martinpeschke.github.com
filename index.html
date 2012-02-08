@@ -7,7 +7,7 @@ title: Home
     <li>
       <article>
       <h2>{{ post.title | xml_escape }}</a></h2>
-          <span class="label permalink"><a href="{{ post.url }}">permalink</a></span>
+          <a class="label permalink" href="{{ post.url }}">permalink</a>
           <span class="datetime">
             <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
               {{ post.date | date: "%B %d, %Y" }}
