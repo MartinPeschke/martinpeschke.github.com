@@ -11,9 +11,9 @@ a {
    }
 }
 
-@gradient-foreground: #ccc;
-@gradient-background: #fff;
 header {
+  @gradient-foreground: #ccc;
+  @gradient-background: #fff;
   padding:  .5em 0;
   background: @gradient-background; /* fallback for non-supporting browsers */  
   background-image: -webkit-gradient(radial, top left, 0, bottom right, 100%, from(@gradient-foreground), to(@gradient-background), color-stop(90%, @gradient-background)); /* old WebKit Syntax */  
@@ -31,8 +31,17 @@ header {
 .body-wrapper {margin-top: 50px;}
 
 .aboutme {
+  @gradient-foreground: rgba(0,0,0,.05);
+  @gradient-background: rgba(0,0,0,.4);
   background-color:#efefef;
-  -webkit-box-shadow: 0 0 7px rgba(0,0,0,.4);
-  -moz-box-shadow: 0 0 7px rgba(0,0,0,.4);
-  box-shadow: 0 1px 0 rgba(0,0,0,.4);
+  background-image: -webkit-gradient(radial, center center, 0, bottom right, 100%, from(@gradient-foreground), to(@gradient-background), color-stop(90%, @gradient-background)); /* old WebKit Syntax */  
+  background-image: -webkit-radial-gradient(center center, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* New WebKit syntax */  
+  background-image: -moz-radial-gradient(center center, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%);  
+  background-image: -ms-radial-gradient(center center, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* IE10+ */  
+  background-image: -o-radial-gradient(center center, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* Opera (13?) */  
+  background-image: radial-gradient(center center, farthest-corner, @gradient-foreground 0%, @gradient-background 90%, @gradient-background 100%); /* standard syntax */  
+  
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,.4) inset;
+  -moz-box-shadow: 0 0 7px rgba(0,0,0,.4) inset;
+  box-shadow: 0 7px rgba(0,0,0,.4) inset;
 }
