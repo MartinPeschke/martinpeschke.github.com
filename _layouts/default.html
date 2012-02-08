@@ -27,9 +27,46 @@
       {{ content }}
       </div>
       
-      <div class="threecol last aboutme">
-        {% include aboutme.html %}
+      <div class="threecol last">
+        <div class="aboutme">
+          {% include aboutme.html %}
+        </div>
+      
+      
+      <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+      <script>
+      new TWTR.Widget({
+        version: 2,
+        type: 'profile',
+        rpp: 4,
+        interval: 30000,
+        width: 'auto',
+        height: ,
+        theme: {
+          shell: {
+            background: '#333333',
+            color: '#ffffff'
+          },
+          tweets: {
+            background: '#000000',
+            color: '#ffffff',
+            links: '#8cc84b'
+          }
+        },
+        features: {
+          scrollbar: false,
+          loop: false,
+          live: false,
+          behavior: 'all'
+        }
+      }).render().setUser('martinpeschke').start();
+      </script>
+      
+      
       </div>
+      
+      
+      
     </div>
   </div>
 </body>
