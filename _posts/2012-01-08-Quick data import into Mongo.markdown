@@ -6,7 +6,7 @@ title: Quick n dirty data import from relational to mongodb
 For porting some dusty relational model into MongoDB using python, I was recently scratching my head, trying to figure out how to get table dumps from MySQL straight into Mongo (well, via python/[PyMongo](https://github.com/mongodb/mongo-python-driver)). 
 
 Its actually quite simple and dictionary-like cursors make life even easier:
-<code>
+<pre class="prettyprint linenums language-python">
 import MySQLdb, simplejson
 from pymongo import Connection
 
@@ -25,7 +25,7 @@ try:
 finally: 
   cur.close()
   conn.close()
-</code>
+</pre>
 
 If you really need to go by filesystem, dont use CVS if you can help it.
 
@@ -36,13 +36,13 @@ There is the [CVS importer](http://www.mongodb.org/display/DOCS/Import+Export+To
 Marginally better is using their very own [Mongo Extended Json](http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON), which at least allows dealing with dates.
 
 Just use this little gem
-<code>
+<pre class="prettyprint linenums language-python">
 from pymongo import json_util
-</code>
+</pre>
 and you get ME(h)JSON for free and simply write that out:
-<code>
+<pre class="prettyprint linenums language-python">
 with open("{}.json".format(INPUT), "w") as outf:
   outf.write(simplejson.dumps(elem, default=json_util.default) + '\n')
-</code>
+</pre>
 
 I like it.
