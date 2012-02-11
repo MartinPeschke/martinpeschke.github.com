@@ -28,7 +28,7 @@ finally:
   conn.close()
 </pre>
 
-If you really need to go by filesystem, dont use CVS if you can help it.
+If you really need to go by filesystem, dont use CSV/TSV if you can help it.
 
 There is the [CVS importer](http://www.mongodb.org/display/DOCS/Import+Export+Tools#ImportExportTools-Example%3AImportfileformat). But that will
 * not respect unicode good and proper. Naturally there will be one file imported which will mangle all names. It just always happens.
