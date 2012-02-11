@@ -10,10 +10,11 @@ Its actually quite simple and dictionary-like cursors make life even easier:
 import MySQLdb, simplejson
 from pymongo import Connection
 
-pymongo_target_collection = Connection('localhost', 27017).testdb.auth_users ### connection.db.collection
+conn = Connection('localhost', 27017)
+pymongo_target_collection = conn.testdb.auth_users ### connection.db.collection
 pymongo_target_collection.drop()              ### just get rid of the crud, this is a complete LOAD
 
-conn = MySQLdb.connect(host='somehost', user='someuser', passwd='50m3v3ry53cur3pa55w0rd1', db='somedb')
+conn = MySQLdb.connect(host='localhost', user='usr', passwd='pwd', db='db')
 cur = conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)
 
 try:
