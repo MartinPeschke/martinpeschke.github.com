@@ -1,3 +1,9 @@
+.border-radius( @radius: 3px ) {
+	-webkit-border-radius: @radius;
+		 -moz-border-radius: @radius;
+					border-radius: @radius;		
+}
+
 @body-color:#333;
 @link-color: #666;
 @standard-color: #8CC84B;
@@ -30,6 +36,7 @@ header {
   background:black;
   padding: 15px 0;
   margin-bottom:25px;
+  .border-radius(5px);
   h3, p {padding: 5px 25px;color:lightgreen;font-family:"Courier New", monospace;}
   a {padding: 5px 25px;color:white !important; text-decoration:underline;}
 }
