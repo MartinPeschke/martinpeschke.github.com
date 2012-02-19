@@ -117,6 +117,7 @@ And register this view via:
 
 This will get any user back on track to their locale aware destintation. Please not this little part <code>path.startswith('/{}'.format(request._LOCALE_))</code>, which prevents this NotFoundView from repeatedly adding locale information in case of an actual not found page.
 
+== 2) URL Generation
 This specific implementation does not prevent you from actually adding locale to any generated URL throughout your application. A simple wrapper around <code>request.route_path</code> can help.
 
 <pre class="prettyprint linenums language-python">
