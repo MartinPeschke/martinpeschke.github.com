@@ -9,3 +9,4 @@ Making jQuery validate play nice is not immediatly obvious, and I've not found a
 
 <script src="https://gist.github.com/1864941.js"> </script>
 
+Sometimes you want to set <code>onfocusout: false</code>, especially when external actions are required and revalidation should happen server side rather than just by entering garbage. This has served me well in any case.
