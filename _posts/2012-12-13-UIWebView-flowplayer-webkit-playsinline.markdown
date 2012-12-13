@@ -34,7 +34,7 @@ Now you think you got it? Of course NOT. Above we have told flowplayer to use th
 While we are at it, lets also remove this goodie:
 
 <pre class="prettyprint linenums language-javascript">
- // native fullscreen
+      // native fullscreen
       if (player.conf.native_fullscreen && $.browser.webkit) {
          player.fullscreen = function() {
             $('video', root)[0].webkitEnterFullScreen();
@@ -46,9 +46,9 @@ While we are at it, lets also remove this goodie:
 And now we are nearly there, since of course, you have to set preload="none" on the video tag. The which and why eludes me yet, just do it, or it'll cost you years of your life.
 
 <pre class="prettyprint linenums language-javascript">
-  <video preload="none" webkit-playsinline>
-      <source src="${url}"/>
-  </video>
+  &gt;video preload="none" webkit-playsinline&lt;
+      &gt;source src="${url}"/&lt;
+  &gt;/video&lt;
 </pre>
 
 PS: the webkit-playsonline is gratuitous. I'll leave it there just because. It doesn't do anything anyways.
