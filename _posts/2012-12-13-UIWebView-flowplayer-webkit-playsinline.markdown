@@ -46,9 +46,9 @@ While we are at it, lets also remove this goodie:
 And now we are nearly there, since of course, you have to set preload="none" on the video tag. The which and why eludes me yet, just do it, or it'll cost you years of your life.
 
 <pre class="prettyprint linenums language-javascript">
-  &gt;video preload="none" webkit-playsinline&lt;
-      &gt;source src="${url}"/&lt;
-  &gt;/video&lt;
+  &lt;video preload="none" webkit-playsinline&gt;
+      &lt;source src="${url}"/&gt;
+  &lt;/video&gt;
 </pre>
 
 PS: the webkit-playsonline is gratuitous. I'll leave it there just because. It doesn't do anything anyways.
