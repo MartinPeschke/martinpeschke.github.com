@@ -9,45 +9,46 @@ Now in a WebView you can make it work by both, adding "webkit-playsinline" to th
 
 However Flowplayer has been worked for best browser experience, so you need to hack a bit around in it to show full screen videos with html5 controls. Essentially I needed to disable native controls for the mobile browsers:
 
-<code>
+<pre class="prettyprint linenums language-javascript">
     var instances = [],
        extensions = [],
        UA = navigator.userAgent,
        use_native = false,
        // IPHONE - this bypasses fullscreen native ui for iphone app webview
         bypass_native_fs = /Android/.test(UA) || /iP(hone|od)/i.test(UA);
-</code>
+</pre>
 
 
 Add the webkit-playsinline property to the flowplayer videoTag, since it gets removed from the html video tag () as do all unrecognized attributes):
-<code>
+
+<pre class="prettyprint linenums language-javascript">
     if (bypass_native_fs) videoTag.attr("webkit-playsinline","on");
-</code>
+</pre>
 
 Now you think you got it? Of course NOT. Above we have told flowplayer to use the actual HTML5 full screen API, which mobile safari supports. Now we need to Tell flowplayer to just fake fullscreen:
 
-<code>
+<pre class="prettyprint linenums language-javascript">
   if (FS_SUPPORT && !bypass_native_fs) {
-</code>
+</pre>
 
 While we are at it, lets also remove this goodie:
 
-<code>
+<pre class="prettyprint linenums language-javascript">
  // native fullscreen
       if (player.conf.native_fullscreen && $.browser.webkit) {
          player.fullscreen = function() {
             $('video', root)[0].webkitEnterFullScreen();
          }
       }
-</code>
+</pre>
 
 
 And now we are nearly there, since of course, you have to set preload="none" on the video tag. The which and why eludes me yet, just do it, or it'll cost you years of your life.
 
-<code>
+<pre class="prettyprint linenums language-javascript">
   <video preload="none" webkit-playsinline>
       <source src="${url}"/>
   </video>
-</code>
+</pre>
 
 PS: the webkit-playsonline is gratuitous. I'll leave it there just because. It doesn't do anything anyways.
