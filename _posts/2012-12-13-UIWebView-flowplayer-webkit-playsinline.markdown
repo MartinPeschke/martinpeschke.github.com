@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UIWebView-flowplayer-webkit-playsinline
+title: HTML5 flowplayer, ios UIWebView, allowsInlineMediaPlayback and webkit-playsinline
 ---
 [By now it is well understood](http://blog.millermedeiros.com/unsolved-html5-video-issues-on-ios/) 
 that apple has disabled video inline playing on the [iPhone but not on the iPad](http://roblaplaca.com/blog/2010/04/14/ipad-and-iphone-html5-video-autoplay/). 
