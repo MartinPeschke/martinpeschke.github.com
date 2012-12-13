@@ -7,7 +7,7 @@ that apple has disabled video inline playing on the [iPhone but not on the iPad]
 Now in a WebView you can make it work by both, adding "webkit-playsinline" to the video tag and setting 
 [allowsInlineMediaPlayback](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html) to YES.
 
-However Flowplayer has been worked for best browser experience, so you need to hack a bit around in it to show full screen videos with html5 controls. Essentially I needed to disable native controls for the mobile browsers:
+However flowplayer has been built for best browser experience, so you need to hack a bit around in it to show full screen videos with HTML5 controls. Essentially you need to disable native controls for the mobile browsers:
 
 <pre class="prettyprint linenums language-javascript">
     var instances = [],
@@ -19,19 +19,19 @@ However Flowplayer has been worked for best browser experience, so you need to h
 </pre>
 
 
-Add the webkit-playsinline property to the flowplayer videoTag, since it gets removed from the html video tag () as do all unrecognized attributes):
+Add the webkit-playsinline property to the flowplayer videoTag, since it gets removed from the html video tag (as do all unrecognized attributes):
 
 <pre class="prettyprint linenums language-javascript">
     if (bypass_native_fs) videoTag.attr("webkit-playsinline","on");
 </pre>
 
-Now you think you got it? Of course NOT. Above we have told flowplayer to use the actual HTML5 full screen API, which mobile safari supports. Now we need to Tell flowplayer to just fake fullscreen:
+Now you think you got it? Of course NOT. Above we have told flowplayer to use the actual HTML5 full screen API, which mobile safari supports. Now we need to tell flowplayer to just fake fullscreen (the actual thing suppresses all HTML overlays):
 
 <pre class="prettyprint linenums language-javascript">
   if (FS_SUPPORT && !bypass_native_fs) {
 </pre>
 
-While we are at it, lets also remove this goodie:
+While we are at it, let's also remove this goodie:
 
 <pre class="prettyprint linenums language-javascript">
       // native fullscreen
