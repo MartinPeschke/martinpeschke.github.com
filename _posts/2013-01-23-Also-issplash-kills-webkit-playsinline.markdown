@@ -21,4 +21,4 @@ That together with [the goodie below](https://github.com/flowplayer/flowplayer/b
    }
 </pre>
 
-makes iPhones behave as splash always, which in a WebView will drive you insane. It did me in anyway. For removing the firstframe support helped quite a bit.
+makes iPhones behave as splash always, which in a WebView will drive you insane. It did me in anyway. However for now, it plays along nicely and displays all HTML controls.
